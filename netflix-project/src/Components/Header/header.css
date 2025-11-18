@@ -1,0 +1,80 @@
+/*
+ * 1. OUTER CONTAINER SETUP
+ * Ensures the header is full-width and fixed at the top
+ */
+.outer-container {
+    width: 100%;
+    position: fixed; /* Keeps the header visible when scrolling */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures it stays above all other content */
+    background-color: #141414; /* Netflix dark background */
+    transition: background-color 0.4s ease; /* For future scroll effects */
+}
+
+/*
+ * 2. MAIN HEADER LAYOUT (Flexbox)
+ * Aligns left and right sections horizontally
+ */
+.header-container {
+    max-width: 1400px; /* Optional: Sets a max width for the content area */
+    margin: 0 auto; /* Centers the content */
+    display: flex;
+    justify-content: space-between; /* Pushes left and right sections apart */
+    align-items: center;
+    padding: 10px 4%; /* Add padding to the sides */
+}
+
+/*
+ * 3. NAVIGATION LISTS (Left and Right)
+ * Uses Flexbox to align list items horizontally
+ */
+.header-left ul,
+.header-right ul {
+    display: flex;
+    align-items: center;
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * 4. LEFT NAVIGATION ITEMS
+ */
+.header-left li {
+    margin-right: 20px;
+    font-size: 14px;
+    color: #e5e5e5; /* Light gray text */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* The first li contains the Netflix logo */
+.header-left li:first-child {
+    margin-right: 40px; /* Extra space after the logo */
+}
+
+.header-left li:hover {
+    color: #b3b3b3; /* Slightly lighter gray on hover */
+}
+
+/*
+ * 5. RIGHT NAVIGATION ICONS
+ */
+.header-right li {
+    margin-left: 20px;
+    color: #e5e5e5;
+    cursor: pointer;
+}
+
+.header-right li svg {
+    /* Styles for the Material UI icons */
+    font-size: 24px;
+    vertical-align: middle; /* Aligns icons nicely with other content */
+}
+
+/* Specific styling for the Netflix logo image */
+.header-left li img {
+    height: 35px; /* Adjust height for standard Netflix logo size */
+    width: auto;
+}

@@ -1,0 +1,131 @@
+/*
+ * 1. OUTER CONTAINER & BASE STYLES
+ * Assumes the body background is black, so the footer uses a slightly lighter dark gray.
+ */
+.footer_outer-container {
+    width: 100%;
+    /* Dark gray for a slight contrast to the pure black body background */
+    background-color: #141414; 
+    color: #808080; /* Muted gray for text */
+    padding: 30px 0 60px 0;
+    font-family: Arial, sans-serif;
+    font-size: 13px; 
+}
+
+/* Centers the content and limits the width */
+.footer_iner-container {
+    max-width: 900px; 
+    margin: 0 auto;
+    padding: 0 4%; 
+}
+
+/*
+ * 2. SOCIAL MEDIA ICONS
+ */
+.footer_icon {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.footer_icon svg {
+    color: #fff; 
+    font-size: 28px;
+    margin-right: 25px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer_icon svg:hover {
+    color: #a0a0a0; 
+}
+
+/*
+ * 3. FOOTER LINKS LAYOUT
+ * This section targets your nested structure to create the four columns.
+ */
+.footer_data {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap */
+    justify-content: space-between; /* Spreads the columns evenly */
+    margin-bottom: 20px;
+}
+
+/* Target the four inner divs which hold the <ul>s (the columns) */
+/* The fourth column is slightly larger in your JSX, so we apply styles to all five direct children, including the 'service-code' div */
+.footer_data > div {
+    /* Set each column to take slightly less than 25% of the width */
+    flex-basis: 23%; 
+    min-width: 150px; /* Prevents columns from becoming too narrow */
+    margin-bottom: 15px; 
+}
+
+/* Styling for the lists */
+.footer_data ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.footer_data li {
+    margin-bottom: 12px;
+    cursor: pointer;
+    line-height: 1.2;
+    transition: color 0.3s;
+}
+
+.footer_data li:hover {
+    color: #fff; 
+    text-decoration: underline; 
+}
+
+/*
+ * 4. SERVICE CODE BUTTON
+ * We target it specifically to override the flex-basis above and ensure it's full-width if needed.
+ */
+.service-code {
+    flex-basis: 100% !important; /* Force it to take the full width */
+    margin-top: 25px;
+}
+
+.service-code p {
+    color: #808080;
+    border: 1px solid #808080;
+    padding: 8px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.service-code p:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+/*
+ * 5. COPYRIGHT
+ */
+.copy-write {
+    font-size: 11px;
+    color: #808080;
+    margin-top: 15px;
+}
+
+/*
+ * 6. RESPONSIVENESS
+ */
+@media (max-width: 768px) {
+    .footer_data > div {
+        flex-basis: 45%; /* Two columns wide on tablets */
+        margin-right: 5%;
+    }
+    .service-code {
+        flex-basis: 100% !important; 
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_data > div {
+        flex-basis: 100%; /* Single column stack on mobile */
+    }
+}

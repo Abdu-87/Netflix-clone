@@ -1,10 +1,13 @@
 
 import './App.css';
+import Home from './Pages/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1>Netflix  project is working</h1>
+      
+      <Home></Home>
+
     </div>
   );
 }
